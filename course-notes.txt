@@ -1,22 +1,124 @@
 React Tutorial for beginners
 https://www.youtube.com/watch?v=hn80mWvP-9g&list=PLZPZq0r_RZOMQArzyI32mVndGBZ3D99XQ
 
-4/23/2026 -----------------------------------------------
+4/23/2026 -------------------------------------------------------------
 
-npm vite@latest
+ReactJs
+    - ReactJs is a library & NOT a Framework
+    - Used to easily build and arrange interfaces
+    - Uses components
+        - a self-contained section of code that functions as 
+            a reasonable building block
+    - ReactJs uses a JavaScript syntax extension called, JSX
+        - JSX means JavaScript XML
+        - Allows to write HTML like code within JavaScript files
+    - Uses VirtualDom
+        - Lightweight version of a real DOM of a web packages
+        - Make changes to VirtualDom and only apply specific changes to
+            the real DOM
+        - reduces rendering performance overhead
+    - Prerequisites
+        - arrays
+        - classes
+        - objects
+        - arrow functions
+        - HTML
+    - Project requirements
+        - Node Package Manager (npm)
+    - vite is a development server
+        - modern replacement to OUTDATED Create-React-App
+    
+Project Creation
 
-App Name: my-react-app
-Framework: React
-Language: JavaScript
+npm create vite@latest
+    options selected,
+        App Name: my-react-app
+        Framework: React
+        Language: JavaScript
 
- VITE v8.0.10  ready in 1621 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-  ➜  press h + enter to show help
-
-Run server
+Start development server
     npm run dev
+    output:
+        VITE v8.0.10  ready in 1621 ms
 
+        ➜  Local:   http://localhost:8080/
+        ➜  Network: use --host to expose
+        ➜  press h + enter to show help
+         Shortcuts:
+            press r + enter to restart the server
+            press u + enter to show server url
+            press o + enter to open in browser
+            press c + enter to clear console
+            press q + enter to quit
 
+-----------------------------------------------------------------
 
+Project Structure of this app
+
+'node_module'
+    Contains external libraries & packages that this project relies open
+
+'public'
+    Contains public assets
+        example, 'vite.svg', a logo
+
+'src'
+    Development code goes in here
+    'App.jsx' - Root component & First component
+        Contains function 'App()'
+            the component that ties everything together
+        export default App
+    'main.jsx' - Main JavaScript file
+        Contains 'ReactDOM.createRoot
+        imports to 'App.jsx'
+    'index.css' - Main CSS file
+    'index.html' - Entry point to app
+        <div> tag with id="root"
+        include to main module, "/src/main.jsx"
+    'package.json' - Contains metadata such as
+        "name" - project name
+        "version" - version number
+        "build" - what build? currently using 'vite'
+        "dependencies" - i.e., "react" : "^19.2.5"
+    'src/assets' - folder containing images and videos
+
+-----------------------------------------------------------------
+
+Building Header component
+    - React components can only return a single element
+    - React components can return an element containing child elements
+    - Fragment tags: <> </> 
+        example, <> Child Elements... </>
+    - Component is small section of code which can include JavaScript/HTML
+
+Create 'Header.jsx' component
+    declare function 'Header()' 
+        which returns a <header> tags
+        with children <h1>, <nav>, <ul>, <li>, <a>,<hr>
+    export as default
+
+Create 'Footer.jsx' component
+    declare function, 'Footer()'
+        returns <footer>
+    export as default
+
+'App.jsx'
+    'App()' should return fragment tags with nested React Components
+    example, 
+        return(
+            <>
+            <Header/>
+            <Footer/>
+            </>
+        );
+
+Create 'Food.jsx' component
+    declare function, 'Food()'
+        returns a list of foods
+    declare string variables but outside of 'return()'
+    showcases how JavaScript can be inserted withing 'return()' by utilizing 
+        curly braces {}
+            example, <li>{food1.toUpperCase()}</li>
+    export as default
+    
+-----------------------------------------------------------------
