@@ -1,0 +1,22 @@
+React Tutorial for beginners
+https://www.youtube.com/watch?v=hn80mWvP-9g&list=PLZPZq0r_RZOMQArzyI32mVndGBZ3D99XQ
+
+4/23/2026 -----------------------------------------------
+
+npm vite@latest
+
+App Name: my-react-app
+Framework: React
+Language: JavaScript
+
+ VITE v8.0.10  ready in 1621 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+Run server
+    npm run dev
+
+
+
