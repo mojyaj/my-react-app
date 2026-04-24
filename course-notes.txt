@@ -121,4 +121,55 @@ Create 'Food.jsx' component
             example, <li>{food1.toUpperCase()}</li>
     export as default
     
+4/24/2026 -----------------------------------------------------------------
+
+Card Component
+
+React context
+    - Components can be reused multiple times in the same App.jsx as long
+        as it is embeded inside fragment tags
+    - JSX keyword
+        - 'class' is a reserved keyword
+        - 'className' defines a 'HTML attribute class'
+    - Images 
+        - can be imported and assigned an alias
+        - can directly assign to 'src' attribute using carly braces
+
+Card Components
+    Popular with React Applications
+    Used for many things
+    Contains
+        Image
+        Card Title
+        Description
+
+Create 'old-src' folder
+    to back up source code from previous dates or sections
+
+Create 'Card.jsx'
+    'Card' component
+        Define HTML attribute 'className' = "Card"
+        Add <img> tag with assign dummy profile picture
+            1) import the image with alias, 'profilePic'
+            2) Use curly braces to assign picture to 'src' (No doube-quotes)
+                example, 
+                    src = {profilePic}
+            
+'index.css'
+    Add styles to
+        'Card_A'
+        'Card_B'
+        'Card_C'
+        and its child elements such as
+            <img>
+            <h2>
+            <p>
+    Syntax for accessing child-class examples,
+        .card_A .card_image
+        .card_C .card_title
+        .card_C .card_text
+
 -----------------------------------------------------------------
+
+
+
