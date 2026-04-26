@@ -171,5 +171,63 @@ Create 'Card.jsx'
 
 -----------------------------------------------------------------
 
+Style React Components with CSS
+
+3 CSS Styling methods
+1) External CSS
+2) Modules CSS  *Purposed for React Components
+3) Inline CSS
+
+1. External
+    - Easy for simple projects
+    - Flexibility with Media Queries & Psuedo Selectors
+        - @media only screen and (max-width: 600px) { ... }
+        - .button:focus
+    - 'index.css'
+    - Can lead to naming conflicts while working with many components/Modules
+2. Modules
+    - Dedicated Style Sheet for each component
+    - Scoped
+    - React Modules naming convention
+        - 'component.module.css'
+    - Styles are applied to components via the 'className' attribute
+        - example, <button className="styles"> </button>
+    - Avoids Naming Conflicts
+        - Each className is unique
+        - Generated class name via hashing algorithm
+    - Each Component has their very own styles
+    - Lacks global CSS setup like normal external CSS files
+    - GLOBAL CSS + CSS Modules
+        - import at top level in 'main.jsx'
+        - 'globals.css' or 'index.css'
+        - shared utility classes (.container, .btn)
+3. Inline
+    - Create an object to store styles
+    - Great for components with minimal styling
+    - Convenient
+        - No classes/ids
+        - No Naming Conflicts with global styles
+    - Downsides
+        - Less maintainable in larget applications
+        - Not great for complex styling
+        - Reduces readability of components
+
+Create 'Button.module.css'
+    Reach Modules method
+    Path: 'old-file/4-25-2026/src-css-react-modules/'
+    This is a dedicated CSS module for 'Button.jsx' component
+    Apply styles to 'button' class
+
+    Inline method
+    Path: 'old-file/4-25-2026/src-css-inline/'
+    Created inline styles object and assigned it to 'className'
+
+Create 'Button.jsx' component
+    Import styles from 'Button.module.css'
+    returns <button> element
+
+-----------------------------------------------------------------
+
+
 
 
