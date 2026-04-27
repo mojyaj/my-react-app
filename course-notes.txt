@@ -1,5 +1,6 @@
 React Tutorial for beginners
 https://www.youtube.com/watch?v=hn80mWvP-9g&list=PLZPZq0r_RZOMQArzyI32mVndGBZ3D99XQ
+*Check for content creator important notes in the comment section
 
 4/23/2026 -------------------------------------------------------------
 
@@ -26,6 +27,8 @@ ReactJs
     - Project requirements
         - Node Package Manager (npm)
     - vite is a development server
+        - Build Tool (W3Schools)
+        - install command: npm install -g create-vite
         - modern replacement to OUTDATED Create-React-App
     
 Project Creation
@@ -35,6 +38,9 @@ npm create vite@latest
         App Name: my-react-app
         Framework: React
         Language: JavaScript
+
+    * This command is faster:
+        npm create vite@latest my-react-app -- --template react
 
 Start development server
     npm run dev
@@ -228,6 +234,76 @@ Create 'Button.jsx' component
 
 -----------------------------------------------------------------
 
+3 Topics
+    Props
+    prop-types
+    Default props
 
+Props
+    Read-Only (immutable) properties that are shared between componnents.
+    A parent componenet can send data to a child component.
+    <Component key=value />
 
+    'Props' are arguments passed into React components via HTML attributes
+     Example, 
+        Component:
+        <Student name="Spongebob" age={30}  isStudent={false}> </Student>
+                 ^^^^             ^^^       ^^^^^^^^^
 
+        *Values that are type String should be encased in double-quotes ("").
+
+PropTypes
+    Validate props at runtime in React apps
+    A mechanism that ensures that the passed value is of the correct datatype.
+    Only adds WARNINGS in development so you catch bugs early.
+    Only works in Development. No effect in production.
+    Modern React developers use TypeScript, NOT prop-types.
+    npm install prop-types
+    Module,
+        import PropTypes from 'prop-types'
+    Example,
+        Declare the 'propTypes' of the 'prop' called, 'Student'
+            Student.propTypes = {
+                name: PropTypes.string,
+                age: PropTypes.number,
+                isStudent: PropTypes.bool
+            }
+        ** See Default Props section below
+            it creates a prop differently
+
+    Common PropTypes
+        User.propTypes = {
+            name: PropTypes.string.isRequired, // This prop is REQUIRED
+            age: PropTypes.number,
+            isAdmin: PropTypes.bool,
+            hobbies: PropTypes.array,
+            user: PropTypes.object,
+            onClick: PropTypes.func,
+        };     
+
+    Default Props
+        Default values for props in case they are not passed from the parent component
+        defaultProps does not reliably work with modern function components anymore in React.
+            Officially removed in React 19
+        defaultProps DO WORK for class components
+        *TypeScript is still prefered over defaultProps
+        Default values only apply when the prop is "undefined" NOT when its "null"
+    Example,
+        Component.defaultProps = {
+            name: "John",
+            age: 0,
+        }
+
+ES6/JavaScript Default Parameters
+    Modern Alternative to defaultProps
+    Use ES6 Default Parameters directly in the function signature instead
+
+Create 'Student.jsx'
+    Create component 'Student()' with property called, 'props'
+    Create a Prop, propTypes, and assign default values
+        - name
+        - age
+        - isStudent
+
+'index.css'
+    add minimal CSS styles

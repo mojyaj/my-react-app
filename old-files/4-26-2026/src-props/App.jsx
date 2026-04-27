@@ -4,7 +4,7 @@ function App() {
 
   return(
     <>
-      {/* Use Student Components and assign values to 'props' */}
+      {/* Use Student Components and assign values of 'props' called, 'Student' */}
       <Student name="Spongebob" age={30} isStudent={true}/>
       <Student name="Patrick" age={42} isStudent={false}/>
       <Student name="Squidward" age={50} isStudent={false}/>
