@@ -232,7 +232,7 @@ Create 'Button.jsx' component
     Import styles from 'Button.module.css'
     returns <button> element
 
------------------------------------------------------------------
+4/26/2026 -----------------------------------------------------------------
 
 3 Topics
     Props
@@ -307,3 +307,24 @@ Create 'Student.jsx'
 
 'index.css'
     add minimal CSS styles
+
+4/27/2026 -----------------------------------------------------------------
+
+Conditional Rendering
+    Allows you to control what gets rendered in your application based on certain conditions
+    (show, hide, or change components)
+
+Use condition if/else statements to return HTML for conditional rendering
+
+Create 'UserGreeting.js'
+    Create function component
+    Conditionally returns HTML with a message based on 'isLoggedIn' property
+        each HTML will have its own 'className'
+    Assign PropTypes
+    Assign default values with ES6 Default Parameters
+
+'index.css'
+    Add styles to each HTML based on 'className'
+
+
+
