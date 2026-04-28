@@ -1,19 +1,24 @@
-.welcome-message {
+.list_category {
 
     font-size: 2.5em;
-    background-color: hsl(120, 100%, 42%);
-    color: white;
-    padding: 10px;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+    margin-bottom: 10px;
+    text-align: center;
+    border: 3px solid;
     border-radius: 5px;
-    margin:0;
+    background-color: hsl(185, 100%, 50%);
 }
 
-.login-prompt {
+.list_items {
 
-    font-size: 2.5em;
-    background-color: hsl(0, 100%, 42%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin:0;
+    font-size: 2em;
+    list-style: none;
+    color: hsl(0, 0%, 25%);
+    text-align: center;
+    margin: 0px;
+}
+.list_items li:hover {
+    color: hsl(0, 0%, 50%);
+    cursor: pointer;
 }

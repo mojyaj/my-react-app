@@ -326,5 +326,75 @@ Create 'UserGreeting.js'
 'index.css'
     Add styles to each HTML based on 'className'
 
+-----------------------------------------------------------------
 
+Render Lists in React
+
+Talking Points
+    - React requires each list item to have a 'unique key'
+        - Warning message will be displayed in Web Developer Console
+    - IMPORTANT NOTE:
+        React does not run PropTypes during rendering
+        Must manually trigger PropTypes checks
+        *See 'ListB.jsx'
+
+Note to self:
+    ISSUE:
+    'App.jsx' & 'ListB.jsx'
+    Expected warning messages were not displayed in Chrome Dev Tool Console. 
+    When a prop is assigned a value with an invalid datatype there is supposed
+    to be a warning message about  even though 
+    'prop-types' Module was imported and 'propTypes' were assigned to props.
+    - made sure to start server in development mode
+    - made sure there were no spelling errors when importing or using propTypes
+    - made sure to check that warnings were not hidden in DevTool
+    *still no warning
+
+    FIX:
+    Manually trigger PropTypes validation inside the function component
+    React used to automatically run PropTypes checks during render.
+    Example, 
+        PropTypes.checkPropTypes(
+            ListB.propTypes,
+            { items, category },
+            "prop",
+            "ListB"
+        );
+
+Create 'ListA.jsx'
+    function component
+    Declare array of 'fruits' objects
+        - id   *unique key
+        - name *could set this as unique key but, this is not ideal for databases
+        - calories per serving
+    Declare 'listItems' and assign new array using map() and wrap each fruits 
+        inside of <li> element
+    returns
+        Ordered list of 'listItems' array
+
+Create 'ListB.jsx'
+    Takes arguments from 'App.jsx'
+        1) category
+        2) items    *array containing objects
+            - id
+            - name
+            - calories
+    Assign prop types
+    Assign default values
+    returns
+        Category
+        Ordered list of items from two arrays (from 'App.jsx')
+
+'App.jsx'
+    import 'List' component
+    Declare an array 'fruits' to be sent to ListB component
+    returns
+        'ListA' component
+        'ListB' component w/ props, 'fruits'
+            Send data from 'fruits' & 'category' as 'props' to the component 'ListB'
+            Add conditional rendering
+                if array.length is 0 then do not render any HTML
+                    fruits.length > 0 && HTML code*utilize short circuit
+        'ListB' component w/ props, 'vegetables'
+            Similar to above
 
