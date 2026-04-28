@@ -328,14 +328,14 @@ Create 'UserGreeting.js'
 
 -----------------------------------------------------------------
 
-Render Lists in React
+Render Lists & PropTypes in React
 
 Talking Points
     - React requires each list item to have a 'unique key'
         - Warning message will be displayed in Web Developer Console
     - IMPORTANT NOTE:
         React does not run PropTypes during rendering
-        Must manually trigger PropTypes checks
+        Must manually trigger PropTypes checks inside function components
         *See 'ListB.jsx'
 
 Note to self:
@@ -380,10 +380,15 @@ Create 'ListB.jsx'
             - name
             - calories
     Assign prop types
+    *Manually triger PropTypes validation
     Assign default values
     returns
         Category
         Ordered list of items from two arrays (from 'App.jsx')
+    *intentionally entered invalid datatype for 'calories' to show-case PropType warnings
+        example, 
+            installHook.js:1 Warning: Failed prop type: Invalid prop `items[0].calories` 
+            of type `string` supplied to `ListB`, expected `number`.
 
 'App.jsx'
     import 'List' component
