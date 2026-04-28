@@ -1,16 +1,13 @@
-import ButtonA from "./ButtonA.jsx"
-import ButtonB from "./ButtonB.jsx"
-import ProfilePicture from "./ProfilePicture.jsx"
+import MyComponent from "./MyComponent.jsx";
+import Counter from "./Counter.jsx"
 
 function App() {
 
   return(
     <>
-        <ButtonA />
-        <hr></hr>
-        <ButtonB />
-        <hr></hr>
-        <ProfilePicture />
+        <MyComponent />
+        <Counter />
+        
     </>
   );
 }
