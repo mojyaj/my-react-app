@@ -403,3 +403,37 @@ Create 'ListB.jsx'
         'ListB' component w/ props, 'vegetables'
             Similar to above
 
+4/28/2026 -----------------------------------------------------------------
+
+Click-Events
+    An interaction between the User clicks on a specific element.
+    We  can respond to clicks by passing a callback to the onClick
+    event handler.
+    JavaScript automatically passes an 'event', or 'e', object to your handler 
+    function when an event occurs.
+
+Important Knowledge gap
+    useState()
+    React is not expected to work directly with the DOM, but with
+    'useState()' instead.
+
+Create 'ButtonA' component
+    Declared event handlers to handle click event, onClick
+    return
+        A button with 'onClick' event handler
+        
+Create 'ButtonB' component
+    Declared event handlers to handle click events, 'onClick' & 'onDoubleClick'
+    return
+        Two button with click events calling the two above event handlers
+
+Create 'ProfilePicture.jsx' component
+    Declare reference to asset, 'dummy-profile-pic-A.jpg'
+    
+'App.jsx'
+    return
+        ButtonA component
+        ButtonB component
+
+
+
