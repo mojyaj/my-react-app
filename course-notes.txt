@@ -550,7 +550,26 @@ Create 'MyComponent' component
             *Don't forget to create parent <label> elements for each radio button 
         10) <p> -> display the 'shipping' value based on which radio button is clicked 
 
+4/30/2026 -----------------------------------------------------------------
+
+Color Picker App with React
+
+Tips:
+    - 'style' object in React Components
+        Must encase Style property value inside a nested JSON object
+        example, 
+            style={ {backgroundColor: "blue"} }
+
+Create 'ColorPicker' comoponent
+    Declare stateful variable,
+        [color, setColor]
+    Declare event handler, 'handleColorChange()'
+        sets the 'color' based on the Event from 'onChange'
+    Create <input type="color" />
+        with Event, 'onChange' = 'handleColorChange'
+        to assign 'color' property with 'value' of color input
+'index.css'
+    add CSS style to <input type="color" /> element
+        example,    input[type="color"] {}
+
 -----------------------------------------------------------------
-
-
-
