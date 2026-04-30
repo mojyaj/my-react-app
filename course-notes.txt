@@ -498,10 +498,59 @@ Create 'Counter' component
             blue
             hover -> turns darker
 
+4/29/2026 -----------------------------------------------------------------
 
+onChange Event handler 
+    Event handler used primarily with form elements. 
+    Triggers a function every time the value of the input changes 
+    - Used primarily on <form> elements such as 
+        <input/> 
+        <input type="radio"/> 
+        <textarea/> 
+        <select> 
+        to 'trigger a change that notifies or alerts the user that they 
+        have selected a particular option, item, or value' on the form
+
+Create 'MyComponent' component 
+    Declare stateful variables, 
+        [name, setName] 
+        [quantity, setQuantity] 
+    Declare event handler 'handleNameChange()' 
+        This function will call 'setName()' and assign the stateful 
+            variable 'name' with what ever is typed into <input> element 
+    Declare event handler 'handleNameChange()' 
+    returns
+        1) <input /> element 
+            'value' attribute is assigned variable 'name' 
+            'onChange' event is assigned 'handleNameChange()' 
+        2) <p> element -> Display the value of 'name' *stateful variable 
+        
+        3) <input /> element 
+            Similar to the other <input> above but displays the 
+            value of 'quantity' 
+            restrict input to 'type number' only 
+        4) <p> element -> Display the number value of 'quantity' 
+        
+        5) <textarea /> element 
+            'value' attribute is assigned variable 'comment' 
+            'onChange' event is assigned 'handleCommentChange()' 
+        6) <p> -> Display the value of 'comment' 
+        
+        7) <select> element 
+            4 <option> elements 
+                i)   'Select an Option' (Default Value) 
+                ii)  'Visa' 
+                iii) 'MasterCard' 
+                iv)  'GiftCard' 
+        8)  <p> -> Display the value of selected 'payment' option 
+
+        9) 2 <input type="radio">  buttons 
+            i) "Pick Up" 
+            ii) "Delivery" 
+            *Don't forget to create parent <label> elements for each radio button 
+        10) <p> -> display the 'shipping' value based on which radio button is clicked 
 
 -----------------------------------------------------------------
-
 
 
 
