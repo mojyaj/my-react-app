@@ -14,11 +14,22 @@ export default function MyComponent() {
         setCount(c => c + 1);
         setCount(c => c + 1);
     }
+    function increment2() {
+        setCount(count + 1);
+        setCount(count + 1);
+        setCount(count + 1);
+    }
 
     function decrement() {
         setCount(c => c - 1);
         setCount(c => c - 1);
         setCount(c => c - 1);
+    }
+
+    function decrement2() {
+        setCount(count - 1);
+        setCount(count - 1);
+        setCount(count - 1);
     }
 
     function reset() {
@@ -29,11 +40,20 @@ export default function MyComponent() {
     }
 
     return(
-        <div className="counter_container">
-            <p className="counter_display">Count: {count} </p>
-            <button className="counter_button" onClick={decrement}> Decrement </button>
-            <button className="counter_button" onClick={reset}> Reset </button>
-            <button className="counter_button" onClick={increment}> Increment </button>
+    <>
+        <div>
+            <p>Count with Updater Function: {count} </p>
+            <button onClick={decrement}> Decrement </button>
+            <button onClick={reset}> Reset </button>
+            <button onClick={increment}> Increment </button>
         </div>
+        <hr></hr>
+        <div>
+            <p>Count with NO Updater Function: {count} </p>
+            <button onClick={decrement2}> Decrement </button>
+            <button onClick={reset}> Reset </button>
+            <button onClick={increment2}> Increment </button>
+        </div>
+    </>    
     );
 }

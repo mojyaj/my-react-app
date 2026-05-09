@@ -595,9 +595,28 @@ How does a Prop get updated when calling multiple setState()?
         - React puts your updater function in a queue (First-In First-Out)
         - During the next render,  it will call them in the same order
 
+5/10/2026 -----------------------------------------------------------------
 
+Update OBJECT state
 
+To update a JavaScript Object, you must use the 'spread operator' and then assign 
+    the property that needs to be updated
+    example, 
+        setCar({...car, year: 2025});
+    The above example is similar to
+        setCar({year: 2024, make: "Ford", model: "Mustang", year: 2025});
+    *The final JavaScript Object will have 'year' equals '2025' because 
+        if there are duplicate property assignments, then JavaScript will use 
+        the latter.
+    JavaScript does not allow Objects to have duplicate keys
+    'setCar()' should utilize updater function as this is best practice
+    example,
+        setCar( car => ({...car, year: event.target.value}) );
+                       ^                                  ^
+        *Surround the arrow function with paranthesis because JavaScript will
+          think that we are trying to create multi-lined code.
 
+-----------------------------------------------------------------
 
 
 
