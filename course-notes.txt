@@ -654,11 +654,31 @@ Talking Points
             textbox is empty and this adds an empty string to the array and display an empty list
             item. 
     Fix:    if (!newFood) return;
-    
+
+5/11/2026 -----------------------------------------------------------------
+
+Update ARRAY of OBJECTS in State
+
+*Refer to related 'src-update-ARRAY-OBJECTS-state' folder in 'old-files' folder
+    'MyComponent.jsx'
+
+Talking Points on 'Updating Array of Objects in state'
+    - Create a new Update Array instead of modifying an existing array
+        example, setCars( c => ...c, newCar)
+        *Also see function 'handleAddCar()' from 'MyComponent.jsx'
+
+'MyComponent.jsx'      
+    Contains 'cars' Arrays of 'car' Objects and corresponding setState() function
+        3 other 'stateful' variables to describe a 'car'
+            1) carYear
+            2) carMake
+            3) carModel
+    HTML content
+        <ul> List for displaying individual carYear, carMake, and carModel.
+        <input> For user to input carYear, carMake, and carModel.
+        <button> For processing user inputs and adding them to the list
+
 -----------------------------------------------------------------
-
-
-
 
 
 
