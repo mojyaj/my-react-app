@@ -599,6 +599,9 @@ How does a Prop get updated when calling multiple setState()?
 
 Update OBJECT state
 
+*Refer to related 'src-update-OBJECTS' folder in 'old-files' folder
+    'MyComponent.jsx'
+
 To update a JavaScript Object, you must use the 'spread operator' and then assign 
     the property that needs to be updated
     example, 
@@ -616,9 +619,43 @@ To update a JavaScript Object, you must use the 'spread operator' and then assig
         *Surround the arrow function with paranthesis because JavaScript will
           think that we are trying to create multi-lined code.
 
+5-11-2026 -----------------------------------------------------------------
+
+Update Array State
+
+*Refer to related 'src-update-ARRAY-state' folder in 'old-files' folder
+    'MyComponent.jsx'
+
+Talking Points
+    - Similar to previous 'Update OBJECT state' lecture
+    - Utilize 'spread operator' followed by the original Arrayand seperate the new
+        array element with comma (,).
+        example, setFoods(foods => ( [...foods, newFood]) );
+                                       ^   ^       ^
+                                      *Original   *New item
+    - Distinction: We say that we are 'Updating' an 'Array/Object' but, we are
+        actually 'Creating' a new 'Array/Object' which copies the original items 
+        over to the new 'Array/Object' and append a new item.
+        *If the item being appended already exists in the array then the appended item
+            will 'Overwrite' the old item.
+    - JavaScript syntax
+        - Underscore '_' in a argument list when calling a function means that this 
+            parameter can be ignored
+
+'MyComponent.jsx'
+    Contains a list of Foods
+        Each Item can be deleted just by clicking the food item trigger 'onClick' which
+            calls the related setState() function
+    Contains a text box and corrosponding 'Add Food' button
+        A user can type a food into the text box
+        Clicking the 'Add Food' button adds the food item to the 'foods' array and empties
+            the textbox
+    Issue: Instructor did not handle scenario where users can just click 'Add Food' while the 
+            textbox is empty and this adds an empty string to the array and display an empty list
+            item. 
+    Fix:    if (!newFood) return;
+    
 -----------------------------------------------------------------
-
-
 
 
 
