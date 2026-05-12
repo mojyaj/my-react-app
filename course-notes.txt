@@ -678,7 +678,77 @@ Talking Points on 'Updating Array of Objects in state'
         <input> For user to input carYear, carMake, and carModel.
         <button> For processing user inputs and adding them to the list
 
+5/12/2026 -----------------------------------------------------------------
+
+Build this To-Do-List app with React
+
+*refer to 'ToDoList.jsx' in src-To-Do-List-App
+
+Create 'ToDoList.jsx'
+    [tasks, setTasks]
+    [newTask, setNewTask]
+    function handleInputChange(event)
+    function addTask()
+        Check if the textbox is not empty, if so then do nothing
+        When the user clicks the 'Add' button, the user input in the
+            text box is assigned to 'newTask' (stateful variable)
+        call function, 'setTasks()' and pass in 'newTask' and the reset
+            'newTasks' to empty string
+
+    function deleteTask(index)
+        *Create a new List without the 'task to be deleted'
+        Access 'tasks' and use .filter() to remove the task at 'index'
+            tasks.filter( (_, i) => i !== index );
+        then call 'setTasks()' and pass in the filtered List
+
+    function moveTaskUp(index)
+        Check if the argument 'index' is greater than 0, because if the user 
+            clicks on the item at the very top of the list then the UP button 
+            should just do nothing
+        Create a copy of 'tasks' (updatedTasks) and use Array Destructuring to swap the current 
+            item with the item below it
+        Update the list by calling 'setTasks()' and pass in the 'updatedTasks'
+    
+    function moveTaskDown(index)
+        Check if the argument at 'index' is already at the very bottom of the List,
+            if so then do nothing
+        Create a copy of 'tasks' (updatedTasks) and use Array Destructuring to swap the current
+            item witht the item above it
+        Update the list by calling 'setTasks()' and pass in the 'updatedTasks'
+   
+    returns
+        <h1>
+        <div>
+        <input> Handles event 'onChange' | calls handleInputChange(event)
+        <button> Adds a new task to the 'tasks' list | calls function 'addTask()'
+        <ol> Display list of each 'tasks' along with 'delete', 'Up', 'Down' buttons
+            <li>
+                <button> one for each of the 3 above operations (delete/up/down)
+'index.css'
+    flex: 1; *this is an advanced property where 3 other flex properties are applied
+        example,  flex: 1  is the same as
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    flex-basis: 0%;
+        *This element take up as much space as possible
+        *should shrink/grow with the size of the browser
+        
 -----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
