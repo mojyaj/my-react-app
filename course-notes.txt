@@ -735,19 +735,99 @@ Create 'ToDoList.jsx'
         
 -----------------------------------------------------------------
 
+React useEffect React Hook
 
+useEffect() = React Hook that tells React DO SOME CODE WHEN,
+                 (pick on):
+                        - This component re-renders
+                            - also on INITIAL render of the page
+                        - This component mounts
+                        - The state of a value
 
+useeffect(func, [dependencies])   // When any 'dependencies' change, invoke 'func'
 
+Context:
+    ** Mount - Adding react component to DOM
+    ** Un-Mounting- Removing react component from the DOM
 
+1) useEffect( () => {})             ** Run on every render
+                                        *Usually avoided.
+2) useEffect( () => {}, [])         ** Runs once only on mount
+                                        *Runs once when component appears
+                                        
+3) useEffect( () => {}, [value])    ** Runs once mount AND 
+                                    ** Runs again whenever 'value' changes
+Use Cases:
+    1) Event Listeners
+    2) DOM Manipulation
+    3) Subscriptions (real-time updates)
+    4) Fetching Data from an Applications
+    5) Clean up when a component unmounts
 
+'MyComponentA.jsx'
+    Create two stateful variables
+        1) [count, setCount]
+        2) [color, setColor]
+    Create two functions that update the value of 'count'
+        1) addCount()
+        2) subtractCount()
+    Create function that updates the value of 'color'
+        changeColor()
+        Toggles between green and red
+    'useEffect()'
+        This is used to update the 'title'
+        title displays the 'width' and 'height' and 'color'
+    return
+        <p style={{}}> Display 'count' & 'color' value
+        2x <button> 'onClick' call 'addCount()' or 'subtractCount()'
+        <button> 'onClick' 'changeColor()'
 
+'MyComponentB.jsx'
+    2 stateful variables
+        1) [width, setWidth] = useState(window.innerWidth)
+            *Default value is the initial width of the browser page
+        2) [height, setHeight] = useState(window.innerHeight)
+            *Default value is the initial height of the browser page
+    function 'handleResize()'
+        When event 'resize' triggers, this callback function is called
+            to set the 2 stateful variables equal to its corresponding 
+            window size values.
+    2 uses of 'useEffect()' hook
+        1) Add event listener 'resize' + 'handleResize()' to DOM object 'window'
+            Returns 'Clean Up Code' via arrow function and remove event listener
+                'resize' + 'handleResize()' from 'window'
+        2) Assign 'title' so that it displays window 'width' and 'height'
 
+*****************************************************************************
 
+Clarity on 'useEffect()' and Uses
 
+React Component Behavior
+    Any code directly inside the component body will execute multiple 
+    times because React Components re-render multiple times.
+        - on initial render
+        - every state update
+            - React re-runs the ENTIRE component function
+        - every re-render
 
+    Event listeners belong inside useEffect()
+    
+    Never put side effects directly in the component body
+        such as,
+            - event Listeners
+            - timers
+            - API calls
+            - DOM manipulation
+    
+    React components should mainly:
+        - calculate UI
+        - return JSX
 
-
-
+    If the component disappears:
+        - listener still exists
+        - duplicates can accumulate
+        - memory leaks happen
+        - weird bugs happen
 
 
 
