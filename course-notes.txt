@@ -830,6 +830,32 @@ React Component Behavior
         - weird bugs happen
 
 
+5/13/2026 -----------------------------------------------------------------
 
+Build Digital Clock App
 
+Create 'DigitalClock.jsx'
+    Stateful variable,
+        [time, setTime] = useState(new Date())
+    useEffect()
+        Create an 'intervalId' using JavaScript function, 'setInterval()'
+            providing a 'callback' that calls 'setTime'
+        * 1000 miliseconds = 1 second
+        * stop the timer by calling,
+            clearInterval(intervalId)
+    Create functions
+        1) formatTime() returns a string containing hours, minutes, & seconds
+            from the 'time' variable
+        2) padZero() takes a 'number' and returns a string prepended with a 0 if 
+            it is single digit.
+    returns
+        <div>  // clock-container
+            <div> // clock
+                <span> // display the current time
 
+'index.css'
+    add CSS styles to '.clock-container' and '.clock'
+        *Blur effect
+            backdrop-filter: blur(5px);
+
+-----------------------------------------------------------------
