@@ -859,3 +859,42 @@ Create 'DigitalClock.jsx'
             backdrop-filter: blur(5px);
 
 -----------------------------------------------------------------
+
+useContext() Hook
+
+useContext() - React Hook that allows you to share values between multiple
+                levels of components without passing props through each level.
+
+Provider Component
+    1) import {createContext} from 'react';
+    2) create & export context: 
+            export const UserContext = createContext()
+    3) <MyContext.Provider value={value}>
+            <Child />
+        </MyContext.Provider>
+    *see 'ComponentA.jsx'
+
+CONSUMER COMPONENTS:
+    1) import { useContext } from 'react'
+    2) consume context:
+            const value = useContext(MyContext);
+    *see 'ComponentC.jsx' or 'ComponentD.jsx'
+
+Talking Points
+    - Props Drilling
+        - When data (props) is passed down through multiple layers of 
+            components to reach a deeply nested child that actually needs it.
+        - ISSUE: passing 'props' down to each child components can be very tedious
+            - anti-pattern
+            - difficult to maintain
+            - triggers many unnecessary re-renders
+            - reduced reusability
+            - tightly coupled
+        - Solution: useContext() hook
+            - share values between multiple levels of components
+            - allows a deeply nested child to access variables from higher
+                in the Component Hierarchy
+       
+-----------------------------------------------------------------
+
+
