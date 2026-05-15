@@ -897,4 +897,47 @@ Talking Points
        
 -----------------------------------------------------------------
 
+useRef() Hook
+
+useState - Rerenders the component when the state value changes
+
+useRef() - Creates persistent mutable storage.
+            Does not cause a re-render when its value changes.
+            When you want a component to 'remember' some information,
+            but you don't want that information to trigger new renders.
+        
+        Use Cases:
+            1) Accessing/Interacting with DOM elements
+                'ref' attribute connects a DOM element to a React 'useRef object'
+            2) Handling Focus, Animations, and transitions
+            3) Managing Timers and Intervals   
+
+    Declaration:
+        const inputRef = useRef(0);
+            - the argument can be any data type or object
+    Access:
+        inputRef.current;
+            - 'current' holds the actual value or DOM element.
+    Usage in JSX:
+        <input ref={inputRef}/>
+            - 'ref' attribute in React gives you a way to directly access 
+                a DOM element or a React component instance.
+
+useRefs are an “escape hatch.”
+    React prefers:
+        - state
+        - props
+        - declarative UI
+
+Good use of useRefs:
+    - focus
+    - scrolling
+    - third-party libraries
+    - measuring
+    - timers
+
+-----------------------------------------------------------------
+
+
+
 
