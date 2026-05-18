@@ -936,8 +936,45 @@ Good use of useRefs:
     - measuring
     - timers
 
------------------------------------------------------------------
+5/16/2026 -----------------------------------------------------------------
 
+StopWatch App
 
+Utilize useState(), useEffect(), and useRef() to build a Stop watch.
+    - useState() will track if the stopwatch 'isRunning' and the 'elapsedTime'
+    - useEffect() will handle properties that count elapsed time and changes
+    - useRef() will store the 'intervalId' returned from calling, 'setInterval()'
+        and 'startTimeRef' when User clicks 'start' button
+
+ [isRunning, setIsRunning] = useState(false);
+    If true, 'startTimeRef' and update 'elapsedTime' every 10 milliseconds.
+    'elapsedTime' will be displayed on screen.
+ [elapsedTime, setElapsedTime] = useState(0);
+    stores the elapsed time minus 'startTimeRef'
+ intervalIdRef = useRef(null);
+    
+ startTimeRef = useRef(0);
+
+functions
+    1) start()
+        begin counting
+        continue counting
+    2) stop()
+        stop counting
+    3) reset()
+        stop counting
+        reset cout time to 0
+    4) formatTime()
+        pad zero to single digit numbers before displaying
+        returns
+            hours:minutes:seconds:milliseconds
+
+returns
+    <div .stopwatch>  The parent element housing all the stopwatch related elements
+        <div .display> Display counting elapsed time when 'isRunning' is true
+        <div .controls> parent element housing interactable UI elements
+            <button .start-button> callback to 'start()'
+            <button .stop-button> callback to 'stop()'
+            <button reset-button> callback to 'reset()'
 
 
